@@ -6,11 +6,11 @@ Resource         ../../resources/services.robot
 
 ***Test Cases***
 Sucessfuly Login
-    ${payload}     :::
+    ${payload}     ::::
     ${resp}=       Post Token      ${payload}   
     Status Should Be   200         ${resp}
 
 Incorrect Password
-    ${payload}     :::
+    ${payload}     ::::
     ${resp}=       Post Token      ${payload}   
     Status Should Be   401         ${resp}
