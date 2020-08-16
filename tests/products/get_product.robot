@@ -24,3 +24,19 @@ Product Not Found
     ${resp}=      Get Product    ${1500}
 
     Status Should Be   404       ${resp}  
+
+Get Product List
+    [tags]      success
+
+    ${list}     Get Json        list.json
+    ${itens}=   Set Variable    ${list['data']}
+
+    FOR         ${item}   IN    @{itens}  
+        Post Product    ${item}    before_remove   
+    END
+
+    ${resp}=    Get Products
+
+    Status Should Be   200       ${resp}    
+    Should Not Be Empty          ${resp.json()['data']}
+ 
