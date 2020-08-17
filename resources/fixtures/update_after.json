@@ -1,0 +1,10 @@
+{
+    "title": "Super Mario Bros 3",
+    "category": "Nintendo",
+    "price": "199.99",
+    "description": "É pura diversão com este clássico de plantaforma 2D",
+    "producers": [
+        "Nitendo"
+    ],
+    "cover": "mario1.jpg"
+}

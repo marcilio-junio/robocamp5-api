@@ -6,13 +6,13 @@ Resource         ../../resources/services.robot
 
 ***Test Cases***
 Sucessfuly Login
-    [tags]         todo
-    ${payload}     Set Suite Var Auth Token 
-    ${resp}=       Post Token      ${payload}   
+    [tags]         success
+
+    ${resp}=       Post Token      ${user_email}      ${user_pass} 
     Status Should Be   200         ${resp}
 
 Incorrect Password
-    [tags]         todo
-    ${payload}     Set Suite Variable Auth Token      ${user_email}      123456
-    ${resp}=       Post Token      ${payload}    
+    [tags]         not_authorized
+    
+    ${resp}=       Post Token      ${user_email}      123456   
     Status Should Be   401         ${resp}
