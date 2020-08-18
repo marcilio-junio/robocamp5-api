@@ -22,10 +22,11 @@ pipeline {
                 }
             }
         }
-        stage('Acceptance Tests')
-        steps{
-            echo 'Simulando a aprovação do PO'
-            input(message: 'Você aprova essa versão', ok:'Sim :)')
+        stage('Acceptance Tests'){
+            steps {
+                echo 'Simulando a aprovação do PO'
+                input(message: 'Você aprova essa versão?', ok: 'Sim :)')
+            }
         }
     }
 }
