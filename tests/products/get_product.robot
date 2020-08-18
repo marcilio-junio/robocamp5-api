@@ -10,7 +10,7 @@ Suite Setup      Set Suite Var Auth Token  ${user_email}    ${user_pass}
 Get Unique product
     [tags]        success
 
-    ${product}    Get Json        get_unique.Json
+    ${product}    Get Json        get_unique.json
     ${unique}=    Post Product    ${product}    before_remove
     ${id}=        Convert To String     ${unique.json()['id']}
     ${resp}=      Get Product    ${id}
